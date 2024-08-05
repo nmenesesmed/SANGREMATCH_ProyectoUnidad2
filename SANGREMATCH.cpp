@@ -44,4 +44,23 @@ void agregar_persona(Persona personas[], int& num_personas, const int max_person
     } else {
         cout << "No se pueden agregar mas " << tipo_persona << "s, base de datos llena.\n"; // Mensaje si la base de datos está llena
     }
+
+// Función para verificar la compatibilidad de donantes con receptores
+void verificar_compatibilidad(const Persona receptores[], int num_receptores, const Persona donantes[], int num_donantes) {
+    for (int i = 0; i < num_receptores; i++) { // Recorre todos los receptores
+        cout << "----------------------------------------\n"; // Línea divisoria para claridad
+        cout << "Receptor: " << receptores[i].nombre << " (" << receptores[i].tipo_sangre << ")\n"; // Muestra el receptor
+        cout << "Donantes compatibles:\n"; // Inicia la lista de donantes compatibles
+        bool found = false; // Variable para verificar si se encontró al menos un donante compatible
+        for (int j = 0; j < num_donantes; j++) { // Recorre todos los donantes
+            if (es_compatible(receptores[i].tipo_sangre, donantes[j].tipo_sangre)) { // Verifica la compatibilidad
+                cout << "  - " << donantes[j].nombre << " (" << donantes[j].tipo_sangre << ")\n"; // Muestra el donante compatible
+                found = true; // Marca que se encontró al menos un donante compatible
+            }
+        }
+        if (!found) { // Si no se encontró ningún donante compatible
+            cout << "  No hay donantes compatibles.\n"; // Mensaje indicando que no hay donantes compatibles
+        }
+    }
+    cout << "----------------------------------------\n"; // Línea divisoria para claridad
 }
