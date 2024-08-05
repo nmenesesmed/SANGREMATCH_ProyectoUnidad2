@@ -1,3 +1,6 @@
+//SANGREMATCH.cpp
+//Norelia Yamile Nayeli Meneses Medina Codigo:2022-119023 Grupo:03
+
 #include <iostream>     // Incluye la entrada y salida estándar
 #include <string>       // Incluye el manejo de cadenas de texto
 #include <iomanip>      // Incluye el manejo de formatos de entrada/salida
