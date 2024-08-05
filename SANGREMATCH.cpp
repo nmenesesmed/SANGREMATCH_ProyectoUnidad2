@@ -84,3 +84,30 @@ int main() {
     int num_receptores = 0; // Contador de receptores
     int num_donantes = 0; // Contador de donantes
     int opcion; // Variable para almacenar la opción seleccionada por el usuario
+
+ do {
+        mostrar_menu(); // Muestra el menú de opciones
+        cin >> opcion; // Lee la opción seleccionada por el usuario
+        cin.ignore();  // Ignora el carácter de nueva línea dejado en el buffer
+
+        switch (opcion) {
+            case 1:
+                agregar_persona(receptores, num_receptores, MAX_PERSONAS, "receptor"); // Agrega un receptor
+                break;
+            case 2:
+                agregar_persona(donantes, num_donantes, MAX_PERSONAS, "donante"); // Agrega un donante
+                break;
+            case 3:
+                verificar_compatibilidad(receptores, num_receptores, donantes, num_donantes); // Verifica la compatibilidad
+                break;
+            case 4:
+                cout << "Saliendo del programa.\n"; // Mensaje al salir del programa
+                break;
+            default:
+                cout << "Opcion no valida. Intenta de nuevo.\n"; // Mensaje para opción no válida
+                break;
+        }
+    } while (opcion != 4); // Repite el bucle hasta que el usuario elija salir
+
+    return 0; // Finaliza el programa
+}
