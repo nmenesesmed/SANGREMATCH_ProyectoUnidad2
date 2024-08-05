@@ -76,3 +76,11 @@ void mostrar_menu() {
     cout << "----------------------------------------\n"; // Línea divisoria para claridad
     cout << "Elige una opcion: "; // Solicita al usuario que elija una opción
 }
+
+int main() {
+    const int MAX_PERSONAS = 100; // Tamaño máximo del arreglo de personas
+    Persona receptores[MAX_PERSONAS]; // Arreglo para almacenar receptores
+    Persona donantes[MAX_PERSONAS]; // Arreglo para almacenar donantes
+    int num_receptores = 0; // Contador de receptores
+    int num_donantes = 0; // Contador de donantes
+    int opcion; // Variable para almacenar la opción seleccionada por el usuario
