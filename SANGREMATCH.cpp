@@ -32,3 +32,16 @@ bool es_compatible(const string& receptor, const string& donante) {
     }
     return false; // Si el tipo de sangre del receptor no coincide con ninguno de los casos, devuelve false
 }
+
+// Función para agregar una persona (receptor o donante) al arreglo de personas
+void agregar_persona(Persona personas[], int& num_personas, const int max_personas, const string& tipo_persona) {
+    if (num_personas < max_personas) { // Verifica si aún hay espacio en el arreglo
+        cout << "Ingresa el nombre del " << tipo_persona << ": "; // Solicita el nombre
+        getline(cin, personas[num_personas].nombre); // Lee el nombre completo de la persona
+        cout << "Ingresa el tipo de sangre del " << tipo_persona << " (A+ , A-, O+, O-, B+, B-, AB+, AB-) : "; // Solicita el tipo de sangre
+        getline(cin, personas[num_personas].tipo_sangre); // Lee el tipo de sangre
+        num_personas++; // Incrementa el contador de personas
+    } else {
+        cout << "No se pueden agregar mas " << tipo_persona << "s, base de datos llena.\n"; // Mensaje si la base de datos está llena
+    }
+}
