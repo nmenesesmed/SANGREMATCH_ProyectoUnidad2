@@ -64,3 +64,15 @@ void verificar_compatibilidad(const Persona receptores[], int num_receptores, co
     }
     cout << "----------------------------------------\n"; // Línea divisoria para claridad
 }
+
+// Función para mostrar el menú de opciones
+void mostrar_menu() {
+    cout << "\n----------------------------------------\n"; // Línea divisoria para claridad
+    cout << "Menu:\n"; // Título del menú
+    cout << "1. Agregar receptor\n"; // Opción para agregar un receptor
+    cout << "2. Agregar donante\n"; // Opción para agregar un donante
+    cout << "3. Verificar compatibilidad\n"; // Opción para verificar compatibilidad
+    cout << "4. Salir\n"; // Opción para salir del programa
+    cout << "----------------------------------------\n"; // Línea divisoria para claridad
+    cout << "Elige una opcion: "; // Solicita al usuario que elija una opción
+}
